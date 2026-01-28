@@ -28,7 +28,7 @@ const registerUser = async(req,res)=>{
                            });
 
 
-        res.redirect(`http://127.0.0.1:5500/FRONTEND/dashboard.html?token=${token}`)
+        res.redirect(`http://127.0.0.1:5500/FRONTEND/loading.html?token=${token}`)
     }catch(err){
        return res.redirect('http://127.0.0.1:5500/FRONTEND/failedRegist.html');
     }
@@ -54,7 +54,7 @@ const loginUser = async(req,res)=>{
         )
 
 
-        res.redirect(`http://127.0.0.1:5500/FRONTEND/dashboard.html?token=${token}`);
+        res.redirect(`http://127.0.0.1:5500/FRONTEND/loading.html?token=${token}`);
 
     }catch(err){
         return res.redirect('http://127.0.0.1:5500/FRONTEND/failedlogin.html');

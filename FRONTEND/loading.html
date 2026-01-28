@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Loading Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:"Segoe UI",sans-serif;
+  background:#f5f6fa;
+}
+
+.loader-box{
+  text-align:center;
+}
+
+.loader{
+  width:60px;
+  height:60px;
+  border:6px solid #ddd;
+  border-top:6px solid #3498db;
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+  margin:0 auto 20px;
+}
+
+@keyframes spin{
+  0%{transform:rotate(0deg);}
+  100%{transform:rotate(360deg);}
+}
+
+h2{
+  color:#333;
+  margin-bottom:5px;
+}
+
+p{
+  color:#777;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+  <div class="loader-box">
+    <div class="loader"></div>
+    <h2>Loading your dashboard</h2>
+    <p>Please wait a moment…</p>
+  </div>
+
+<script>
+async function loadDashboard() {
+    try{
+    
+        // ✅ Simulate 5-second loading before dashboard
+        setTimeout(()=>{
+            window.location.href = "dashboard.html";
+        }, 5000); // 5000ms = 5 seconds
+
+    }catch(err){
+        window.location.href = "failedlogin.html";
+    }
+}
+
+loadDashboard();
+</script>
+
+</body>
+</html>
